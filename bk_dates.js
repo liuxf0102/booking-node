@@ -43,6 +43,7 @@ app.post('/dates/add', function (req,res) {
  
 					if (result.affectedRows != 0) {
 						response.push({'result' : 'success'});
+						response.push({'id' : result.insertId});
 					} else {
 						response.push({'msg' : 'No Result Found'});
 					}
