@@ -42,7 +42,7 @@ app.post('/product/add', function (req,res) {
 			function(err, result) {
 		  		if (!err){
  
-					if (result.affectedRows != 0) {
+					if (result.affectedRows !== 0) {
 						response.push({'result' : 'success'});
 					} else {
 						response.push({'msg' : 'No Result Found'});
@@ -76,7 +76,7 @@ app.post('/product/edit/:id', function (req,res) {
 			function(err, result) {
 		  		if (!err){
 
-					if (result.affectedRows != 0) {
+					if (result.affectedRows !== 0) {
 						response.push({'result' : 'success'});
 					} else {
 						response.push({'msg' : 'No Result Found'});
@@ -103,7 +103,7 @@ app.delete('/product/delete/:id', function (req,res) {
   		if (!err){
   			var response = [];
 
-			if (result.affectedRows != 0) {
+			if (result.affectedRows !== 0) {
 				response.push({'result' : 'success'});
 			} else {
 				response.push({'msg' : 'No Result Found'});
@@ -124,7 +124,7 @@ app.get('/product/:id', function (req,res) {
   		if (!err){
   			var response = [];
 
-			if (rows.length != 0) {
+			if (rows.length !== 0) {
 				response.push({'result' : 'success', 'data' : rows});
 			} else {
 				response.push({'result' : 'error', 'msg' : 'No Results Found'});
